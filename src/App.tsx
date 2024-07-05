@@ -1,22 +1,18 @@
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { RecoilRoot } from "recoil";
+import Configuracao from "./pages/Configuracao";
+import Sorteio from "./pages/Sorteio";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <RecoilRoot>
+        <Routes>
+          <Route path='/' element={<Configuracao />}/>
+          <Route path='/sorteio' element={<Sorteio />}/>
+        </Routes>
+      </RecoilRoot>
+    </BrowserRouter>
   );
 }
 
